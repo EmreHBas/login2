@@ -1,0 +1,15 @@
+{
+    "name": "emboy/webshop",
+    "autoload": {
+        "psr-4": {
+            "Webshop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EmreHBas",
+            "email": "112864371+EmreHBas@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
