@@ -1,11 +1,15 @@
 <?php
+
     // Auteur: Emre Bas
+
+require_once '../vendor/autoload.php';
+
+use Opdracht6a\classes\User;
 
 // Is de register button aangeklikt?
 if(isset($_POST['register-btn'])){
 	require_once('classes/user.php');
 	$user = new User();
-	$errors=[];
 
 	$user->username = $_POST['username'];
 	$user->SetPassword($_POST['password']);
@@ -13,7 +17,7 @@ if(isset($_POST['register-btn'])){
 	$user->ShowUser();
 
 	// Validatie gegevens
-	// Hoe???
+	$errors = $user->ValidateUsername();
 
 	if(count($errors) == 0){
 		// Register user
@@ -32,7 +36,7 @@ if(isset($_POST['register-btn'])){
 	
 	} else {
 		echo "
-			<script>alert('" . "User registerd" . "')</script>
+			<script>alert('" . "User registered" . "')</script>
 			<script>window.location = 'login_form.php'</script>";
 	}
 
